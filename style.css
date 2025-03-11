@@ -1,0 +1,116 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding-top: 70px; /* Espacio para el navbar fijo */
+}
+
+/* Navbar con fondo animado (gradiente) */
+.navbar {
+  background: linear-gradient(45deg, #007bff, #00d4ff);
+}
+
+/* Efecto animado de gradiente en el título de la homepage */
+.animated-gradient {
+  background: linear-gradient(45deg, #ff6b6b, #f7d794, #6a89cc);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 8s ease infinite;
+}
+
+/* Keyframes para el gradiente */
+@keyframes gradientAnimation {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Foto del Desarrollador */
+.developer-photo {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+/* Títulos de Sección */
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Estilos generales para las cards con efecto hover y latido */
+.card {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: heartbeat 3s infinite;
+}
+
+/* Hover en cards: elevación y sombra */
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Animación sutil de "latido del corazón" */
+@keyframes heartbeat {
+  0%   { transform: scale(1); }
+  25%  { transform: scale(1.02); }
+  40%  { transform: scale(1); }
+  60%  { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Dark Mode: toda la página en negro y textos en blanco */
+body.dark-mode {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Navbar en dark mode */
+body.dark-mode .navbar {
+  background-color: #000;
+}
+
+/* En dark mode, eliminamos cualquier fondo blanco de secciones bg-light */
+body.dark-mode .bg-light {
+  background-color: #000 !important;
+}
+
+/* Cards en dark mode: eliminamos línea blanca (borde) */
+body.dark-mode .card {
+  background-color: #000;
+  border-color: #000; /* Igual al fondo para no mostrar línea */
+  color: #fff;
+}
+
+/* Botones en dark mode */
+body.dark-mode .btn-outline-dark {
+  border-color: #fff;
+  color: #fff;
+}
+body.dark-mode .btn-outline-dark:hover {
+  background-color: #fff;
+  color: #000;
+}
+body.dark-mode .btn-outline-light {
+  border-color: #fff;
+  color: #fff;
+}
+
+/* Botones de redes sociales */
+.social-icons a {
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Responsividad */
+@media (max-width: 576px) {
+  .animated-gradient {
+    font-size: 1.8rem;
+  }
+}
